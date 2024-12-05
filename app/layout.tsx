@@ -7,6 +7,7 @@ const geistSans = localFont({
   variable: '--font-geist-sans',
   weight: '100 900',
 })
+
 const geistMono = localFont({
   src: './fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
@@ -22,14 +23,15 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Marvin Aziz - OpenAI Application',
-  description: 'An interactive journey showcasing my path with AI and why I want to join OpenAI. Built with Next.js, TypeScript, and Framer Motion.',
+  description:
+    'An interactive journey showcasing my path with AI and why I want to join OpenAI. Built with Next.js, TypeScript, and Framer Motion.',
   keywords: ['OpenAI', 'AI', 'Next.js', 'TypeScript', 'Framer Motion', 'Interactive Application'],
   authors: [{ name: 'Marvin Aziz', url: 'https://www.linkedin.com/in/marvin-aziz/' }],
   creator: 'Marvin Aziz',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://openai.marvinaziz.com',
+    url: 'https://webtotheflow.com',
     title: 'Marvin Aziz - OpenAI Application',
     description: 'An interactive journey showcasing my path with AI and why I want to join OpenAI.',
     siteName: 'Marvin Aziz - OpenAI Application',
