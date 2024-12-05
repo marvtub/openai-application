@@ -3,11 +3,8 @@ const nextConfig = {
   images: {
     domains: ['cdn.prod.website-files.com'],
   },
-  onDemandEntries: {
-    // Suppress WebSocket connection warnings
-    maxInactiveAge: 25 * 1000,
-    pagesBufferLength: 2,
-  },
+  // Disable WebSocket in development to prevent polling warnings
+  webSocketTimeout: 0,
 }
 
 export default nextConfig
