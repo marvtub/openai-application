@@ -20,7 +20,7 @@ const journeySteps: JourneyStep[] = [
     title: 'The Moment of Revelation',
     content:
       "While I had long been an admirer of DeepMind's groundbreaking achievements, ChatGPT felt different—this was a technological inflection point that would reshape how I work, create, and solve problems.",
-    image: '/images/what1.jpg  ',
+    image: '/images/what1.jpg',
     timeframe: 'November 2022',
   },
   {
