@@ -102,7 +102,7 @@ export default function DotNavigation() {
             </div>
 
             {/* Journey step dots */}
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
                 {activeSection === 'journey' && (
                     <motion.div
                         className="flex flex-col gap-3"
