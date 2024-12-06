@@ -78,35 +78,12 @@ export default function DotNavigation() {
 
     return (
         <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex gap-4">
-            {/* Main section dots */}
-            <div className="flex flex-col gap-4">
-                {sections.map((section) => (
-                    <button
-                        key={section.id}
-                        onClick={() => scrollTo(section.id)}
-                        className="group relative p-2"
-                    >
-                        {/* Label */}
-                        <span className="absolute right-full mr-2 py-1 px-2 rounded bg-zinc-900/90 text-white text-sm 
-                           whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                            {section.name}
-                        </span>
-
-                        {/* Dot */}
-                        <div
-                            className={`w-3 h-3 rounded-full transition-all duration-300 
-                ${activeSection === section.id ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/50'}`}
-                        />
-                    </button>
-                ))}
-            </div>
-
             {/* Journey step dots - always present, just faded */}
             <motion.div
                 className="flex flex-col gap-3"
                 animate={{
                     opacity: activeSection === 'journey' ? 1 : 0,
-                    x: activeSection === 'journey' ? 0 : -10,
+                    x: activeSection === 'journey' ? 0 : 10,
                     pointerEvents: activeSection === 'journey' ? 'auto' : 'none',
                 }}
                 transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
@@ -134,6 +111,29 @@ export default function DotNavigation() {
                     </button>
                 ))}
             </motion.div>
+
+            {/* Main section dots */}
+            <div className="flex flex-col gap-4">
+                {sections.map((section) => (
+                    <button
+                        key={section.id}
+                        onClick={() => scrollTo(section.id)}
+                        className="group relative p-2"
+                    >
+                        {/* Label */}
+                        <span className="absolute right-full mr-2 py-1 px-2 rounded bg-zinc-900/90 text-white text-sm 
+                           whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                            {section.name}
+                        </span>
+
+                        {/* Dot */}
+                        <div
+                            className={`w-3 h-3 rounded-full transition-all duration-300 
+                ${activeSection === section.id ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/50'}`}
+                        />
+                    </button>
+                ))}
+            </div>
         </div>
     )
 }
