@@ -15,7 +15,7 @@ export default function Home() {
     <div className="h-screen overflow-hidden bg-black text-white">
       <Navbar />
       <DotNavigation />
-      <div className="scroll-snap-container">
+      <div className="scroll-snap-container pb-20 md:pb-0">
         <Hero />
         <Journey />
         <CaseStudies />
