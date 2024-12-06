@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const sections = [
     { id: 'hero', name: 'Introduction' },
@@ -101,41 +101,39 @@ export default function DotNavigation() {
                 ))}
             </div>
 
-            {/* Journey step dots */}
-            <AnimatePresence mode="wait">
-                {activeSection === 'journey' && (
-                    <motion.div
-                        className="flex flex-col gap-3"
-                        initial={{ opacity: 0, x: -10, width: 0 }}
-                        animate={{ opacity: 1, x: 0, width: 'auto' }}
-                        exit={{ opacity: 0, x: -10, width: 0 }}
-                        transition={{ duration: 0.3, ease: 'easeOut' }}
+            {/* Journey step dots - always present, just faded */}
+            <motion.div
+                className="flex flex-col gap-3"
+                animate={{
+                    opacity: activeSection === 'journey' ? 1 : 0,
+                    x: activeSection === 'journey' ? 0 : -10,
+                    pointerEvents: activeSection === 'journey' ? 'auto' : 'none',
+                }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+            >
+                {Array.from({ length: 5 }).map((_, index) => (
+                    <button
+                        key={`step-${index}`}
+                        onClick={() => scrollToStep(index)}
+                        className="group relative p-1"
                     >
-                        {Array.from({ length: 5 }).map((_, index) => (
-                            <button
-                                key={`step-${index}`}
-                                onClick={() => scrollToStep(index)}
-                                className="group relative p-1"
-                            >
-                                {/* Step label */}
-                                <span className="absolute right-full mr-2 py-1 px-2 rounded bg-zinc-900/90 text-white text-xs 
-                               whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
-                                    Step {index + 1}
-                                </span>
+                        {/* Step label */}
+                        <span className="absolute right-full mr-2 py-1 px-2 rounded bg-zinc-900/90 text-white text-xs 
+                           whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+                            Step {index + 1}
+                        </span>
 
-                                {/* Step dot */}
-                                <div
-                                    className={`w-2 h-2 rounded-full transition-all duration-300 
+                        {/* Step dot */}
+                        <div
+                            className={`w-2 h-2 rounded-full transition-all duration-300 
                     ${activeJourneyStep === index
-                                            ? 'bg-white/90 scale-110'
-                                            : 'bg-white/20 hover:bg-white/40'
-                                        }`}
-                                />
-                            </button>
-                        ))}
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                                    ? 'bg-white/90 scale-110'
+                                    : 'bg-white/20 hover:bg-white/40'
+                                }`}
+                        />
+                    </button>
+                ))}
+            </motion.div>
         </div>
     )
 }
