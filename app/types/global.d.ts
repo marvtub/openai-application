@@ -1,3 +1,7 @@
-interface Window {
-    join: () => void;
-} 
+declare global {
+  interface Window {
+    join: () => void
+  }
+}
+
+export {}

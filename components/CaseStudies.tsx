@@ -40,7 +40,7 @@ const caseStudies: CaseStudy[] = [
     logoHeight: 25,
     backgroundImage: '/images/Abstract BG/2.jpg',
     website: 'https://lots.agency/',
-    duration: 'Sep 2023 - Present',
+    duration: 'Sep 2023 - Dec 2023',
   },
   {
     company: 'DailySOS',
@@ -51,7 +51,7 @@ const caseStudies: CaseStudy[] = [
     logoHeight: 25,
     backgroundImage: '/images/Abstract BG/3.jpg',
     website: 'https://dailysos.com/',
-    duration: 'Jun 2023 - Aug 2023',
+    duration: 'Mar 2024 - Present',
   },
 ]
 
@@ -126,14 +126,14 @@ function CaseStudyCard({
                     <motion.div
                       variants={contentVariants}
                       custom={0}
-                      className="bg-white rounded-lg p-2 shadow-sm relative w-[80px] h-[25px]"
+                      className="bg-white rounded-lg p-3 shadow-sm relative flex items-center justify-center w-[90px] h-[45px]"
                     >
                       <Image
                         src={logo}
                         alt={`${company} logo`}
-                        fill
+                        width={logoWidth || 60}
+                        height={logoHeight || 20}
                         className="object-contain"
-                        sizes="80px"
                       />
                     </motion.div>
                     <motion.span

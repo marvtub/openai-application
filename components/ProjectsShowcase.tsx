@@ -12,6 +12,7 @@ interface Project {
   description: string
   image: string
   link?: string
+  tag?: string
 }
 
 interface ProjectCardProps extends Project {
@@ -20,9 +21,11 @@ interface ProjectCardProps extends Project {
 
 const projects: Project[] = [
   {
-    name: 'LinkedIn Chrome Extension',
-    description: 'Enhance your LinkedIn interactions with AI-powered insights and automation.',
-    image: '/placeholder.svg?height=200&width=300',
+    name: 'Agentic Outbound SDR',
+    description:
+      'An agentic outbound SDR that uses LangGraph, GPT-4o-mini & Gemini Flash 8B with search tools to find & enrich every new lead for personalized outreach',
+    image: '/images/LangGraphAbstract BG.jpg',
+    tag: 'Tinkering with',
   },
   {
     name: 'Whisper-Powered Voice Note Workflow For Journaling',
@@ -36,10 +39,11 @@ const projects: Project[] = [
       "My first SaaS product: Steal YouTube Videos Like an Artist, Create Better Video Ideas, Faster with OpenAI's models",
     image: '/images/outlineideation-min.webp',
     link: 'https://videobrainstorm.com/?ref=openai',
+    tag: '2 Week Prototype',
   },
 ]
 
-function ProjectCard({ name, description, image, link, index }: ProjectCardProps) {
+function ProjectCard({ name, description, image, link, tag, index }: ProjectCardProps) {
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -55,10 +59,11 @@ function ProjectCard({ name, description, image, link, index }: ProjectCardProps
         className="w-full aspect-video object-cover"
       />
       <CardHeader>
+        {tag && <span className="text-xs text-gray-400 mb-2">{tag}</span>}
         <CardTitle className="text-2xl text-white">{name}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-gray-300 ">{description}</p>
+        <p className="text-gray-300">{description}</p>
       </CardContent>
     </Card>
   )

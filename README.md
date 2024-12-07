@@ -6,7 +6,7 @@ This isn't just another application – it's an interactive story about my journ
 
 ## 🚀 Live Demo
 
-[View the live application](https://openai.marvinaziz.com)
+[View the live application](https://marvins-application.vercel.app/)
 
 ## 💡 Key Features
 
@@ -39,7 +39,7 @@ I believe in showing rather than telling. This application demonstrates:
 
 # Clone the repository
 
-git clone https://github.com/yourusername/openai-application.git
+git clone https://github.com/marvtub/openai-application.git
 
 # Install dependencies
 

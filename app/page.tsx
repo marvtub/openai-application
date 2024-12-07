@@ -29,6 +29,10 @@ export default function Home() {
           '%cI believe AI will fundamentally change how we work, create, and solve problems. Want to chat about it?',
           'color: #666;'
         )
+        console.log(
+          '%cReach out to me on LinkedIn: https://linkedin.com/in/marvin-aziz or email me at marvin@webtotheflow.com',
+          'color: #10a37f;'
+        )
       }
     }
 

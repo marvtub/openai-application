@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 import Link from 'next/link'
-import { memo, useEffect } from 'react'
+import { memo } from 'react'
 
 interface JourneyStep {
   title: string
@@ -146,7 +146,7 @@ const ImageContent = memo(
 ImageContent.displayName = 'ImageContent'
 
 const JourneyStep = memo(function JourneyStep(props: JourneyStepProps) {
-  const [ref, inView] = useInView({
+  const [ref] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
