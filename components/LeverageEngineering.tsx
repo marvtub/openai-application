@@ -69,7 +69,7 @@ export default function LeverageEngineering() {
     >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl text-balance mb-6 text-center">
-          <span className="emphasis">Leverage</span> Engineering Philosophy
+          <span className="emphasis">Leverage</span> Engineering <span className="serif italic">Philosophy</span>
         </h2>
         <p className="text-xl text-center mb-16 text-gray-300 max-w-3xl mx-auto ">
           While the world speculates about future breakthroughs, I&apos;m focused on maximizing the

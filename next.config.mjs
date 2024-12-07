@@ -2,9 +2,14 @@
 const nextConfig = {
   images: {
     domains: ['cdn.prod.website-files.com'],
-  },
-  // Disable WebSocket in development to prevent polling warnings
-  webSocketTimeout: 0,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.prod.website-files.com',
+      },
+    ],
+  }
 }
 
 export default nextConfig
+

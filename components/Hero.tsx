@@ -49,9 +49,9 @@ export default function Hero() {
           </p>
           <Button
             variant="outline"
-            size="lg"
+            size="xl"
             onClick={handleExploreClick}
-            className="border-white text-gray-900 hover:bg-white hover:text-black font-bold transition-all duration-300"
+            className=" border-white text-gray-900 hover:bg-white hover:text-black font-bold transition-all duration-300 text-xl"
           >
             Let me tell you a <span className="font-bold serif text-gray-900 italic">Story</span>
           </Button>
