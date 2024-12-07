@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 import { ExternalLink } from 'lucide-react'
@@ -29,7 +29,7 @@ const caseStudies: CaseStudy[] = [
     logoHeight: 25,
     backgroundImage: '/images/Abstract BG/1.jpg',
     website: 'https://kommunaldigital.de/',
-    duration: 'Nov 2023 - Jan 2024'
+    duration: 'Nov 2023 - Jan 2024',
   },
   {
     company: 'Lots* - Marketing Agency',
@@ -40,7 +40,7 @@ const caseStudies: CaseStudy[] = [
     logoHeight: 25,
     backgroundImage: '/images/Abstract BG/2.jpg',
     website: 'https://lots.agency/',
-    duration: 'Sep 2023 - Present'
+    duration: 'Sep 2023 - Present',
   },
   {
     company: 'DailySOS',
@@ -51,11 +51,21 @@ const caseStudies: CaseStudy[] = [
     logoHeight: 25,
     backgroundImage: '/images/Abstract BG/3.jpg',
     website: 'https://dailysos.com/',
-    duration: 'Jun 2023 - Aug 2023'
+    duration: 'Jun 2023 - Aug 2023',
   },
 ]
 
-function CaseStudyCard({ company, description, logo, logoWidth, logoHeight, backgroundImage, website, duration, index }: CaseStudyCardProps) {
+function CaseStudyCard({
+  company,
+  description,
+  logo,
+  logoWidth,
+  logoHeight,
+  backgroundImage,
+  website,
+  duration,
+  index,
+}: CaseStudyCardProps) {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -64,16 +74,16 @@ function CaseStudyCard({ company, description, logo, logoWidth, logoHeight, back
   const contentVariants = {
     hidden: {
       opacity: 0,
-      y: 10
+      y: 10,
     },
     visible: (custom: number) => ({
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.2,
-        delay: custom * 0.1
-      }
-    })
+        delay: custom * 0.1,
+      },
+    }),
   }
 
   return (
@@ -92,6 +102,7 @@ function CaseStudyCard({ company, description, logo, logoWidth, logoHeight, back
             fill
             className="object-cover"
             priority={index === 0}
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
           <div className="absolute inset-0 bg-black/30 z-10" />
         </div>
@@ -115,14 +126,14 @@ function CaseStudyCard({ company, description, logo, logoWidth, logoHeight, back
                     <motion.div
                       variants={contentVariants}
                       custom={0}
-                      className="bg-white rounded-lg p-2 shadow-sm"
+                      className="bg-white rounded-lg p-2 shadow-sm relative w-[80px] h-[25px]"
                     >
                       <Image
                         src={logo}
                         alt={`${company} logo`}
-                        width={logoWidth || 80}
-                        height={logoHeight || 25}
-                        className="object-contain h-[25px] w-auto"
+                        fill
+                        className="object-contain"
+                        sizes="80px"
                       />
                     </motion.div>
                     <motion.span

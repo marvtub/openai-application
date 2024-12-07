@@ -14,6 +14,20 @@ const geistMono = localFont({
   weight: '100 900',
 })
 
+const easterEgg = `
+%c👋 Hey OpenAI Team!
+
+%cLooks like you're diving into the code - I love that! 
+While you're here, check out these hidden gems:
+- There's a secret keyboard shortcut: Press "O" + "A" + "I"
+- Try typing "join" in the console
+- Check out the README.md for more surprises
+
+P.S. I'd love to chat about how we built this! 
+     Connect with me: https://linkedin.com/in/marvin-aziz/
+
+`
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -49,6 +63,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  if (typeof window !== 'undefined') {
+    console.log(
+      easterEgg,
+      'font-size: 20px; font-weight: bold; color: #10a37f;',
+      'font-size: 14px; color: #666;'
+    )
+
+    window.join = () => {
+      console.log('%c🤖 Ready to help shape the future of AI!', 'font-size: 20px; color: #10a37f;')
+      console.log(
+        '%cCheck out my thoughts on AI alignment: https://webtotheflow.com/ai-alignment',
+        'color: #666;'
+      )
+    }
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>

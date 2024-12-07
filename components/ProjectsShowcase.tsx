@@ -123,7 +123,9 @@ export default function ProjectsShowcase() {
       id="projects"
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl text-balance mb-16 text-center"><span className="serif bold italic">Fun</span> Projects</h2>
+        <h2 className="text-4xl text-balance mb-16 text-center">
+          <span className="serif bold italic">Fun</span> Projects
+        </h2>
         <motion.div
           ref={ref}
           variants={containerVariants}

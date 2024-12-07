@@ -24,13 +24,12 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          style={{ position: 'relative' }}
         >
           <Image
             src="/images/openai-ai-hint.jpg"
             alt="Marvin Aziz"
             fill
-            sizes="(max-width: 768px) 100vw, 144px"
+            sizes="144px"
             className="object-cover rounded-full"
             priority
           />

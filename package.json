@@ -2,6 +2,16 @@
   "name": "openai-application",
   "version": "0.1.0",
   "private": true,
+  "description": "Hey OpenAI! This is more than just an application - it's a demonstration of my passion for AI and its potential. Check out the console for some surprises!",
+  "author": {
+    "name": "Marvin Aziz",
+    "email": "marvin@webtotheflow.com",
+    "url": "https://webtotheflow.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/openai-application"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
